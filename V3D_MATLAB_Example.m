@@ -28,7 +28,7 @@ for i = 1:length(conditions)
     v3d_pipeline_read1 = fullfile(visual3d_base_path, "TreadmillPipelineRead1.v3s");
     v3d_pipeline_write1 = fullfile(visual3d_base_path, "TreadmillPipelineWrite1.v3s");
     
-    % Read the original Visual3D pipeline template (Pipeline #1)
+    % Read the original Visual3D pipeline template (Pipeline #1 - Processes to gait events)
     fid = fopen(v3d_pipeline_read1, 'r');
     v3d_pipeline_text1 = fscanf(fid, '%c');
     fclose(fid);
@@ -60,7 +60,7 @@ for i = 1:length(conditions)
     V3D_steps('Events');
     pause(5);  % Ensure corrected 'Events' are saved before running the next pipeline
     
-    % Paths to Visual3D pipelines (Pipeline #2)
+    % Paths to Visual3D pipelines (Pipeline #2 - Reads in corrected 'Events' and processes to dependent variables)
     v3d_pipeline_read2 = fullfile(visual3d_base_path, "TreadmillPipelineRead2.v3s");
     v3d_pipeline_write2 = fullfile(visual3d_base_path, "TreadmillPipelineWrite2.v3s");
     
